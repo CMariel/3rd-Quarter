@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LG92Sodium_Zampaga</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="author" content="Chloe Marie L. Zampaga">
+
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+
+    <meta name="revised" content="16-02-2022">
+</head>
+<body>
+    <button onclick="changeImage(true)">Change image</button>
+    <button onclick="changeImage(false)">Revert back to original image</button>
+    <img id="image" src="cute_whale.jpg" height="300px">
+
+    <script>
+        function changeImage(bool)
+        {   if(bool == true) {
+            image.src = 'whale_with_legs.jpeg';
+            } else {
+                image.src = 'cute_whale.jpg';
+            }
+        }
+    </script>
+</body>
+</html>
