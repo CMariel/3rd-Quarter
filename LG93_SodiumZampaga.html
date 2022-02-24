@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LG93_SodiumZampaga</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+      <div id="div1"></div>
+      <div id="div2"></div>
+    <script>
+        function inputNumber() {
+            // get input from user
+            let number = prompt("Please enter a number", 0);
+            // return input as an integer
+            return parseInt(number);
+        }
+        function getAverage(a, b) {
+            // get the average of a and b
+            let average = (parseInt(a) + parseInt(b)) / 2;
+
+            document.getElementById("div1").innerHTML = average;
+        }
+        function checkInterval(a, b, c) {
+            let interval = "FALSE";
+
+            // check if c is in the interval [a, b] or [b, a]
+            if((a <= c && b >= c) || (b <= c && a >= c)) {
+                interval = "TRUE";
+            }
+
+            document.getElementById("div2").innerHTML = interval;
+        }
+
+        let x = inputNumber();
+        let y = inputNumber();
+        getAverage(x, y);
+
+        let z = inputNumber();
+        checkInterval(x, y, z);
+    </script>
+  </body>
+</html>
