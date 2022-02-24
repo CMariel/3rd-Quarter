@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alternative Assesment 1</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <center>
+      <h2>Check birthday</h2>
+      <br>
+      <button onclick="calcAgeNow(getBday())">Calculate Age</button>
+      <button onclick="checkLeapYear(getBday())">Check if leap year</button>
+    </center>
+    <script>
+
+      function getBday() {
+        // get input for the user's birthday
+        let user_bday = "06/24/2008";
+        user_bday = prompt("Please enter your birthday in the format mm/dd/yyyy.", user_bday);
+
+        return new Date(user_bday);
+      }
+
+      function calcAgeNow(user_bday) {
+        // find out how old the person is based on their birthday
+
+        //convert input into a date
+        let bday = new Date(user_bday); 
+        console.log("bday: " + bday);
+        
+        //calculate month difference from current date in time  
+        let month_diff = Date.now() - bday.getTime();  
+        console.log("month_diff: " + month_diff + " = " + Date.now() + " - " + bday.getTime());
+    
+        //convert the calculated difference in date format  
+        let age_dt = new Date(month_diff);   
+        console.log("age_dt: " + age_dt);
+          
+        //extract year from date      
+        let year = age_dt.getUTCFullYear();  
+        console.log("year: " + year);
+    
+        //now calculate the age of the user  
+        let age = Math.abs(year - 1970);  
+        console.log("age: " + age);
+
+        //display the calculated age  
+        document.write("Age of the date entered: " + age + " years");
+      }
+
+      function checkLeapYear(user_bday) {
+        // check if their birthday falls on a leap year
+
+        // get the year from the birthday
+        let bday_year = user_bday.getUTCFullYear();
+        console.log("bday_year: " + bday_year);
+
+        //check and display if born on leap year
+        if((bday_year % 4 == 0 && bday_year % 100 != 0) || bday_year % 400 == 0) {
+          document.write("You WERE born on a leap year." + "<br>");
+        } else {
+          document.write("You WERE NOT born on a leap year." + "<br>")
+        }
+      }
+    </script>
+  </body>
+</html>
