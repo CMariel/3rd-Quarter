@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LG101_SodiumZampaga</title>
+    <meta charset="UTF-8">
+
+    <meta name="author" content="Chloe Marie L. Zampaga">
+
+    <meta name="keywords" content="HTML, JavaScript">
+
+    <meta name="revised" content="02-03-2022">
+  </head>
+  <body>
+    <script>
+        function determineTriangle(a, b, c){
+            let type = "";
+
+            if (a == b && b == c) {
+              type = "EQUILATERAL";
+            } else if (a != b && b != c && a != c) {
+              type = "SCALENE";
+            } else {
+              type = "ISOCELES";
+            }
+
+            window.alert("The triangle is " + type);
+        }
+
+        var a = prompt();
+        var b = prompt();
+        var c = prompt();
+
+        if (!isNaN(a) && !isNaN(b) && !isNaN(c)){
+          determineTriangle(a, b, c);
+        } else {
+          window.alert("The input/s you entered is/are not numbers. Please try again.");
+        }
+        
+    </script>
+  </body>
+</html>
